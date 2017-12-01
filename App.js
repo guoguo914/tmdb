@@ -71,9 +71,8 @@ export default class App extends React.Component {
                    placeholder="Enter a movie name!"
                    placeholderTextColor="#aaa"
                    value={this.state.movieNameInput}
-                   onChangeText={text => this.setState({ movieNameInput: text })}
-                   onSubmitEditing={this.movieNameInputSubmitted.bind(this)}/>
-
+                   onChangeText={(text) => this.setState({ movieNameInput: text })}
+                   onSubmitEditing={() => this.movieNameInputSubmitted()}/>
         {/*Conditionally show the Movie component, only if there's a movie in state (so not initially)*/}
         {this.state.movie && <Movie movie={this.state.movie} />}
       </View>
